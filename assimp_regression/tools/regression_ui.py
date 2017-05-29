@@ -43,9 +43,9 @@ from tkinter import *
 import sys
 import os
 import platform
-from assimp_regression import run
+from assimp_regression.framework import run
 import subprocess
-import result_checker as rc
+from assimp_regression.framework import result_checker as rc
 
 INFO  = 0
 WARN  = 1
@@ -281,7 +281,7 @@ def getDefaultExecutable():
     return assimp_bin_path
 
 # -------------------------------------------------------------------------------
-if __name__ == "__main__":
+def main():
     if len(sys.argv) > 1:
         assimp_bin_path = sys.argv[1]
     else:
@@ -289,5 +289,9 @@ if __name__ == "__main__":
     log( INFO, 'Using assimp binary: ' + assimp_bin_path )
     dlg = RegDialog(assimp_bin_path)
     dlg.initUi()
-   
+
+# -------------------------------------------------------------------------------
+if __name__ == "__main__":
+	main()
+	
 # vim: ai ts=4 sts=4 et sw=4

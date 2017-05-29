@@ -60,8 +60,8 @@ import zipfile
 import collections
 import multiprocessing
 
-import settings
-import utils
+from assimp_regression.framework import settings
+from assimp_regression.framework import utils
 
 # -------------------------------------------------------------------------------
 EXPECTED_FAILURE_NOT_MET, DATABASE_LENGTH_MISMATCH, \
